@@ -1,12 +1,13 @@
-//your JS code here. If required.
-function updateTimer() {
-    const timerElement = document.getElementById("timer");
-    const now = new Date();
-    timerElement.innerText = now.toLocaleString(); // Formats date and time
-}
+document.addEventListener("DOMContentLoaded", function () {
+    function updateTimer() {
+        const timerElement = document.getElementById("timer");
+        if (timerElement) {
+            const now = new Date();
+            timerElement.innerText = now.toLocaleString();
+        }
+    }
 
-// Call updateTimer every second
-setInterval(updateTimer, 1000);
-
-// Call once immediately so it doesn't wait 1 second to appear
-updateTimer();
+    // Call once immediately and every second after
+    updateTimer();
+    setInterval(updateTimer, 1000);
+});
