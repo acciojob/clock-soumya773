@@ -1,13 +1,8 @@
-document.addEventListener("DOMContentLoaded", function () {
-    function updateTimer() {
-        const timerElement = document.getElementById("timer");
-        if (timerElement) {
-            const now = new Date();
-            timerElement.innerText = now.toLocaleString();
-        }
+function updateTimer() {
+      const now = new Date();
+      const timerElement = document.getElementById("timer");
+      timerElement.textContent = now.toLocaleString();
     }
 
-    // Call once immediately and every second after
-    updateTimer();
-    setInterval(updateTimer, 1000);
-});
+    updateTimer(); // Initial call to show time immediately
+    setInterval(updateTimer, 1000); 
